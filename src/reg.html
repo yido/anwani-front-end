@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="BlurAdmin" ng-controller="AppController">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anwani</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
+
+  <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css({.tmp/serve,src}) styles/auth.css -->
+  <!-- inject:css -->
+  <!-- css files will be automatically insert here -->
+  <!-- endinject -->
+  <!-- endbuild -->
+</head>
+<body ng-controller="securityController as vm">
+<main class="auth-main">
+  <div class="auth-block">
+    <h1>Sign up to Anwani</h1>
+    <a href="auth.html" class="auth-link">Already have Anwani account? Sign in!</a>
+
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="inputName3" class="col-sm-3 control-label">First Name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="inputName3" placeholder="First Name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputName3" class="col-sm-3 control-label">Middle Name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="inputName4" placeholder="Middle Name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputName3" class="col-sm-3 control-label">Last Name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="inputName5" placeholder="Last Name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputName3" class="col-sm-3 control-label">User type</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="inputName6" placeholder="User type">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-3 control-label">Phonenumber</label>
+        <div class="col-sm-9">
+          <input type="number" class="form-control" id="inputEmail3" placeholder="Phonenumber">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword3" class="col-sm-3 control-label">Pincode</label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control" id="inputPassword3" placeholder="Pincode">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <button type="submit" class="btn btn-default btn-auth">Sign up</button>
+        </div>
+      </div>
+    </form>
+
+    <!--<div class="auth-sep"><span><span>or Sign up with one click</span></span></div>-->
+
+    <!--<div class="al-share-auth">-->
+      <!--<ul class="al-share clearfix">-->
+        <!--<li><i class="socicon socicon-facebook" title="Share on Facebook"></i></li>-->
+        <!--<li><i class="socicon socicon-twitter" title="Share on Twitter"></i></li>-->
+        <!--<li><i class="socicon socicon-google" title="Share on Google Plus"></i></li>-->
+      <!--</ul>-->
+    <!--</div>-->
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<div class="auth-main" ng-controller="securityController as vm">
+    <div class="auth-block">
+        <div clss="row" style="margin-top:40px">
+         <div class="col-sm-offset-4 col-sm-6 col-sm-offset-2">
+              <div class="col-md-12">
+                  <h1>Sign in to Anwani</h1>
+                  <a ng-click="vm.goToSignup()" class="auth-link pull-right">Sign up?</a>
+              </div>
+             <div class="col-md-12">
+                 <form class="form-horizontal" ng-submit="vm.login()" ng-keydown="vm.keyPress($event)">
+                     <div class="form-group">
+                         <label for="inputEmail3" class="col-sm-3 control-label">Phone number</label>
+                         <div class="col-sm-9">
+                             <input type="text"  ng-model="vm.username"
+                                    class="form-control" id="inputEmail3" placeholder="Phone number">
+                         </div>
+                     </div>
+                     <div class="form-group">
+                         <label for="inputPassword3" class="col-sm-3 control-label">Pin code</label>
+
+                         <div class="col-sm-9">
+                             <input type="password"  ng-model="vm.password"
+                                    class="form-control" id="inputPassword3" placeholder="Pin code">
+                         </div>
+                     </div>
+                     <div class="form-group">
+                         <div class="col-sm-offset-3 col-sm-9">
+                             <button type="submit" value="Login" ng-click="vm.login()"
+                                     class="btn btn-default btn-auth">Sign in</button>
+                         </div>
+                     </div>
+                 </form>
+             </div>
+         </div>
+        </div>
+    </div>
+</div>

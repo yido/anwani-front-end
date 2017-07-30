@@ -1,0 +1,74 @@
+<div class="viewport100">
+
+  <div class="col-md-12">
+    <div ba-panel ba-panel-title="Share & Request for Address" ba-panel-class="with-scroll table-panel">
+      <div class="form-group" ng-show="showSearchForm">
+        <button ng-show="showSearchForm"   type="button" class="btn btn-primary pull-right"
+                ng-click="shareAddress()">Done
+        </button>
+        <br><br>
+      </div>
+      <div class="form-group" ng-show="showSearchForm">
+        <ui-select ng-model="user.selected.selectedUser"
+                   theme="bootstrap"
+                   ng-disabled="disabled"
+                   on-select="userSelected(user.selected.selectedUser)"
+                   reset-search-input="false"
+                   title="Choose a user or company to share to."
+                   append-to-body="true">
+          <ui-select-match placeholder="Search for your friends address or companies...">
+            {{$select.selected.profile.first_name}} &nbsp; {{$select.selected.profile.middle_name}}
+            &nbsp; ({{$select.selected.username}})</ui-select-match>
+          <ui-select-choices repeat="user in users track by $index"
+                             refresh="refreshUsers($select.search)"
+                             refresh-delay="0">
+            <div ng-bind-html="user.profile.first_name | highlight: $select.search">
+            </div>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+      <div class="vertical-scroll">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <div  ng-hide="showSearchForm" class="input-group ng-scope">
+              <input type="text" ng-model="search.name"
+                     class="form-control with-success-addon"
+                     placeholder="Search from your address to share...">
+            </div>
+          </tr>
+          <tr>
+            <th class="table-id">#</th>
+            <th>Name</th>
+            <th>Picture</th>
+            <th>Location</th>
+            <th>UniqueId</th>
+            <th>Created Date</th>
+            <th>Share</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="item in Addresses  | filter:search">
+            <td class="table-id">{{$index + 1}}</td>
+            <td class="table-id">
+              <nobr><a href="" ng-click="edit(item)">{{item.name}}</a></nobr>
+            </td>
+            <td>
+              <img src="{{item.picture}}" style="height: 25px;width: 25px;"
+                   alt="" class="img-circle" />
+            </td>
+            <td>Lon: {{item.loc.lon}}, Lat: {{item.loc.lat}}</td>
+            <td>{{item._id}}</td>
+            <td>{{item.date_created | date}}</td>
+            <td>
+              <button type="button" ng-click="share(item)"
+                      class="btn btn-success btn-icon">
+                <i class="ion-forward"></i></button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="auth-main" ng-controller="securityController as vm">
+    <div class="auth-block">
+        <div clss="row" style="margin-top:40px">
+            <div class="col-sm-offset-4 col-sm-6 col-sm-offset-2">
+                <div class="col-md-12">
+                    <h1>Sign up to Anwani</h1>
+                </div>
+                <div class="col-md-12">
+                    <form class="form-horizontal" ng-submit="vm.signup()" ng-keydown="vm.keyPress($event)">
+                        <div class="form-group">
+                            <label for="inputName3" class="col-sm-3 control-label">First Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" ng-model="vm.user.first_name" class="form-control" id="inputName3" placeholder="First Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputName3" class="col-sm-3 control-label">Middle Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" ng-model="vm.user.middle_name" class="form-control" id="inputName4" placeholder="Middle Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputName3" class="col-sm-3 control-label">Last Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" ng-model="vm.user.last_name" class="form-control" id="inputName5" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputName3" class="col-sm-3 control-label">User type</label>
+                            <div class="col-sm-9">
+                                <ui-select ng-model="vm.user.selectedUserType"
+                                           class="btn-group bootstrap-select form-control"
+                                           ng-disabled="false"
+                                           append-to-body="true"
+                                           search-enabled="false">
+                                    <ui-select-match placeholder="User Type">
+                                        <span> {{$select.selected.label}}</span>
+                                    </ui-select-match>
+                                    <ui-select-choices repeat="userType in vm.userTypes">
+                                        <span ng-bind-html="userType.label"></span>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Phonenumber</label>
+                            <div class="col-sm-9">
+                                <input type="text"  ng-model="vm.user.username" class="form-control" id="inputEmail3" placeholder="Phonenumber">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">Pincode</label>
+                            <div class="col-sm-9">
+                                <input type="password"  ng-model="vm.user.password"
+                                       class="form-control" id="inputPassword3" placeholder="Pincode">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" value="SignUp" ng-click="vm.signup()"
+                                        class="btn btn-default btn-auth">Sign up</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

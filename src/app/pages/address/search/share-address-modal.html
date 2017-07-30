@@ -1,0 +1,36 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h5 class="modal-title" id="myModalLabel">You are about to share your <strong>
+            {{vm.address.name}}</strong> address.</h5>
+    </div>
+    <div class="modal-body" style="min-height:400px;">
+        <form>
+            <div class="form-group ">
+                <ui-select ng-model="withSearchItem.selected"
+                           class="btn-group bootstrap-select form-control with-success-addon"
+                           ng-disabled="false"
+                           append-to-body="true"
+                           search-enabled="true">
+                    <ui-select-match placeholder="Search for your friends address or companies...">
+                        {{$select.selected.label}}
+                    </ui-select-match>
+                    <ui-select-choices
+                            repeat="withSearchItem in vm.selectWithSearchItems | filter: $select.search">
+                        <span>{{withSearchItem.label}}</span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-defualt"
+                ng-click="$dismiss()">Cancel
+        </button>
+        <button  type="button" class="btn btn-primary"
+                ng-click="vm.saveAddress()">Save changes
+        </button>
+    </div>
+</div>

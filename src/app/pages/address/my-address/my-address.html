@@ -1,0 +1,53 @@
+<div class="viewport100">
+  <div class="col-md-12">
+    <div ba-panel ba-panel-title="Your Addresses" ba-panel-class="with-scroll table-panel">
+      <div class="row pull-right" style="padding-bottom:20px;margin-right: 10px;">
+        Add new
+        <button type="button" ng-click="open()"
+                class="btn btn-success btn-icon">
+          <i class="ion-plus-round"></i>
+        </button>
+      </div>
+      <div class="vertical-scroll">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <div class="input-group ng-scope">
+              <input type="text" ng-model="search.name"
+                     class="form-control with-success-addon"
+                 placeholder="Search for...">
+            </div>
+          </tr>
+          <tr>
+            <th class="table-id">#</th>
+            <th>Name</th>
+            <th>Picture</th>
+            <th>Location</th>
+            <th>UniqueId</th>
+            <th>Created Date</th>
+            <th>Is Main</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="item in Addresses  | filter:search">
+            <td class="table-id">{{$index + 1}}</td>
+            <td class="table-id">
+              <nobr><a href="" ng-click="edit(item)">{{item.name}}</a></nobr>
+            </td>
+             <td>
+                 <img src="{{item.picture}}" style="height: 25px;width: 25px;"
+                       alt="" class="img-circle" />
+             </td>
+              <td>Lon: {{item.loc.lon}}, Lat: {{item.loc.lat}}</td>
+            <td>{{item._id}}</td>
+              <td>{{item.date_created | date}}</td>
+            <td>
+                <ba-switcher switcher-style="primary" switcher-value="item.is_main"></ba-switcher>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
